@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="pt">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <title>Controle Atendimento</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -13,5 +16,18 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
+<style type="text/css">
+  @media print {
+      .btn {
+          display: none;
+      }
+
+      #noprint {
+          display: none;
+      }
+  }
+</style>
