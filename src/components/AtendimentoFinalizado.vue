@@ -10,7 +10,8 @@
             style="position: fixed; top: 10px; left: 10px; z-index: 1000;">
             <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
           </button>
-          <div v-for="item in atendimentosRealizados" :key="item.chave" class="card my-3">
+          <div v-for="item in atendimentosRealizados.reverse()" :key="item.chave" class="card my-3">
+
             <div class="card-header">
               <h5>{{ item.nome }} - {{ item.telefone }}</h5>
             </div>

@@ -75,6 +75,12 @@
   >
     Alterar Realizados para Aguardando
   </button>
+  <button
+    class="btn btn-info mt-3"
+    @click="$router.push('/atendimento_cancelado')""
+  >
+    Salvar os Dados
+  </button>
   <!-- Botão Flutuante -->
   <router-link to="/cadastrar">
     <button class="btn btn-success rounded-circle p-4 position-fixed bottom-0 end-0 m-4">
@@ -82,7 +88,6 @@
     </button>
   </router-link>
 </template>
-
 <script>
 export default {
   data() {
@@ -145,33 +150,24 @@ export default {
       this.carregarAtendimentos();
     },
     ordenarAtendimentosPorDia() {
-      this.atendimentosAguardando.sort((a, b) => {
+      // Ordena a lista de atendimentos (já carregados em this.atendimentos)
+      this.atendimentos.sort((a, b) => {
         const diaA = parseInt(a.dia_mes, 10);
         const diaB = parseInt(b.dia_mes, 10);
         return diaA - diaB; // Ordena em ordem crescente de dia
       });
 
       // Atualiza o localStorage com a lista ordenada
-      const todosAtendimentos = JSON.parse(localStorage.getItem("atendimentoCliente")) || [];
-      // Atualiza os atendimentosAguardando com a lista ordenada
-      const atendimentosAguardandoOrdenados = this.atendimentosAguardando;
-
-      // Reatualiza o localStorage com os atendimentos ordenados
-      todosAtendimentos.forEach((item, index) => {
-        if (item.status === "Aguardando") {
-          todosAtendimentos[index] = atendimentosAguardandoOrdenados.shift();
-        }
-      });
-
-      localStorage.setItem("atendimentoCliente", JSON.stringify(todosAtendimentos));
+      localStorage.setItem("atendimentoCliente", JSON.stringify(this.atendimentos));
     },
   },
   mounted() {
     this.carregarAtendimentos();
-    this.ordenarAtendimentosPorDia();
+    this.ordenarAtendimentosPorDia(); // Chama a ordenação logo após carregar os atendimentos
   },
 };
 </script>
+
 
 <style scoped>
 /* Estilo para o botão flutuante */

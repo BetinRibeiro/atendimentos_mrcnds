@@ -29,7 +29,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="item in atendimentosCancelados" :key="item.chave">
+                      <tr v-for="item in atendimentosCancelados.reverse()" :key="item.chave">
                         <td>{{ item.nome }}</td>
                         <td>{{ item.telefone }}</td>
                         <td>{{ item.cidade }}</td>

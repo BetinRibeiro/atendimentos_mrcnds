@@ -1,6 +1,6 @@
 <template>
-  <button @click="popularAtendimentos" class="btn btn-primary">Gerar Atendimentos</button>
-  <button @click="deletarTodosAtendimentos" class="btn btn-primary">Deleta Tudo Atendimentos</button>
+  <!-- <button @click="popularAtendimentos" class="btn btn-primary">Gerar Atendimentos</button>
+  <button @click="deletarTodosAtendimentos" class="btn btn-primary">Deleta Tudo Atendimentos</button> -->
   <div class="container-fluid pt-1 px-4">
     <div class="bg-dark rounded p-4">
       <h1>Atendimentos</h1>
