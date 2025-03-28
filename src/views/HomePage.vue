@@ -77,7 +77,7 @@
   </button>
   <button
     class="btn btn-info mt-3"
-    @click="$router.push('/atendimento_cancelado')""
+    @click="$router.push('/dados')"
   >
     Salvar os Dados
   </button>
